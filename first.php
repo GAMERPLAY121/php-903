@@ -1,6 +1,12 @@
 <?php
+
+$resault = "";
+
+if  ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
 $parameters = ['operand1','operator','operand2'];
 foreach ($parameters as $parameter) {
+
     if (empty($_POST[$parameter])) {
         die('Не найден элемент '. $parameter);
     }
@@ -25,4 +31,8 @@ switch ($operator){
     default:
         die('Неверный оператор '. $operator);
 }
-echo $operand1 . ' ' . $operator . ' ' . $operand2 . ' = ' . $resault;
+
+//echo $operand1 . ' ' . $operator . ' ' . $operand2 . ' = ' . $resault;
+
+}
+include 'lesson_4.php';
