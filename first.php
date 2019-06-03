@@ -1,14 +1,28 @@
 <?php
+$parameters = ['operand1','operator','operand2'];
+foreach ($parameters as $parameter) {
+    if (empty($_POST[$parameter])) {
+        die('Не найден элемент '. $parameter);
+    }
+}
+$operand1 = floatval($_POST['operand1']);
+$operand2 = floatval($_POST['operand2']);
+$operator = $_POST['operator'];
 
-$a = [
-    1 => 'Пн',
-    2 => 'Вт',
-    3 => 'Ср',
-    4 => 'Чт',
-    5 => 'Пт',
-    6 => 'Сб',
-    7 => 'Вс'
-];
-
-$a[] = 'еще один день';
-var_dump($a);
+switch ($operator){
+    case '+':
+        $resault = $operand1 + $operand2;
+        break;
+    case '-':
+        $resault = $operand1 - $operand2;
+        break;
+    case '*':
+        $resault = $operand1 * $operand2;
+        break;
+    case '/':
+        $resault = $operand1 / $operand2;
+        break;
+    default:
+        die('Неверный оператор '. $operator);
+}
+echo $operand1 . ' ' . $operator . ' ' . $operand2 . ' = ' . $resault;
