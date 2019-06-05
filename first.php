@@ -1,38 +1,32 @@
 <?php
+return 'function.php';
 
-$resault = "";
+$firstName = '';
+$lastName = '';
+$email = '';
+$password = '';
+$message = '';
 
-if  ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if  ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $parameters = ['firstName', 'lastName', 'email', 'password'];
+    foreach ($parameters as $parameter) {
 
-$parameters = ['operand1','operator','operand2'];
-foreach ($parameters as $parameter) {
+        if (empty($_POST[$parameter])) {
+            die('Не найден элемент ' . $parameter);
+        }
+    }
 
-    if (empty($_POST[$parameter])) {
-        die('Не найден элемент '. $parameter);
+    $firstName = $_POST['operand1'];
+    $lastName = $_POST['operand2'];
+    $email = $_POST['operator'];
+    $password = $_POST['operator'];
+
+    if (saveUser($firstName, $lastName, $email, $password)){
+        $message =  'Пользыватль зарегистрирован!"';
+    }else{
+        $message = 'Ошибка при регистрации';
     }
 }
-$operand1 = floatval($_POST['operand1']);
-$operand2 = floatval($_POST['operand2']);
-$operator = $_POST['operator'];
 
-switch ($operator){
-    case '+':
-        $resault = $operand1 + $operand2;
-        break;
-    case '-':
-        $resault = $operand1 - $operand2;
-        break;
-    case '*':
-        $resault = $operand1 * $operand2;
-        break;
-    case '/':
-        $resault = $operand1 / $operand2;
-        break;
-    default:
-        die('Неверный оператор '. $operator);
-}
 
-//echo $operand1 . ' ' . $operator . ' ' . $operand2 . ' = ' . $resault;
-
-}
-include 'lesson_4.php';
+include 'lesson_5.php';
