@@ -28,5 +28,7 @@ if  ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 };
 
+$str = userPrint('users.txt');
+
 
 include 'lesson_5.php';
