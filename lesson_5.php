@@ -15,17 +15,17 @@
 <body>
     <?php if ($message): ?>
         <p><?= $message ?></p>
-    <?php endif; ?>
+    <?php endif ?>
 
 <form method="post" action="first.php">
 
     <div class="form container">
         <h1>Регистрация</h1>
         <label for="first_name">Имя</label>
-        <input type="text" id="first_name" name="first_name"><br><br>
+        <input type="text" id="first_name" name="firstName"><br><br>
 
         <label for="last_name">Фамилия</label>
-        <input type="text" id="last_name" name="last_name"><br><br>
+        <input type="text" id="last_name" name="lastName"><br><br>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email"><br><br>

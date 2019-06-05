@@ -1,5 +1,5 @@
 <?php
-return 'function.php';
+require 'function.php';
 
 $firstName = '';
 $lastName = '';
@@ -16,17 +16,17 @@ if  ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    $firstName = $_POST['operand1'];
-    $lastName = $_POST['operand2'];
-    $email = $_POST['operator'];
-    $password = $_POST['operator'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     if (saveUser($firstName, $lastName, $email, $password)){
         $message =  'Пользыватль зарегистрирован!"';
     }else{
         $message = 'Ошибка при регистрации';
     }
-}
+};
 
 
 include 'lesson_5.php';
