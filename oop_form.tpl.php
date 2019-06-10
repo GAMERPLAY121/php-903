@@ -19,25 +19,28 @@
             ?></p>
     <?php endif ?>
 
-<form method="post" action="first.php">
-
-    <div class="form container">
+<!--<form method="post" action="first.php">-->
+<!---->
+  <div class="form container">
         <h1>Регистрация</h1>
-        <label for="first_name">Имя</label>
-        <input type="text" id="first_name" name="firstName"><br><br>
 
-        <label for="last_name">Фамилия</label>
-        <input type="text" id="last_name" name="lastName"><br><br>
+        <?= $form->render() ?>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email"><br><br>
-
-        <label for="password">Пароль</label>
-        <input type="password" id="password" name="password"><br><br>
-
-        <button type="submit">Зарегистрироваться</button>
-        </div>
-</form>
+<!--        <label for="first_name">Имя</label>-->
+<!--        <input type="text" id="first_name" name="firstName"><br><br>-->
+<!---->
+<!--        <label for="last_name">Фамилия</label>-->
+<!--        <input type="text" id="last_name" name="lastName"><br><br>-->
+<!---->
+<!--        <label for="email">Email</label>-->
+<!--        <input type="email" id="email" name="email"><br><br>-->
+<!---->
+<!--        <label for="password">Пароль</label>-->
+<!--        <input type="password" id="password" name="password"><br><br>-->
+<!---->
+<!--        <button type="submit">Зарегистрироваться</button>-->
+     </div>
+<!--</form>-->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
